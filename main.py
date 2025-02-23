@@ -9,10 +9,10 @@ days = st.slider('Forecast Days:', min_value=1, max_value=5,
                       help="Select the number of forecasted days.")
 option = st.selectbox("Select data to view", ("Temperature", "Sky"))
 
-st.subheader(f"{option} for the next {days} days in {place}")
 
 
 if place:
+    st.subheader(f"{option} for the next {days} days in {place}")
     try:
         filtered_data = bk.get_data(place, days)
         if option == "temperature":
